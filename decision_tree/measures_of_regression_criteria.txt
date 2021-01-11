@@ -1,0 +1,28 @@
+1. Mean Squared Error : 
+	
+	ym = 1/Nm E y
+		 yC-Qm
+
+	H(Qm) = 1/Nm  E   (y - ym) ** 2
+		     yC-Qm		
+
+2. Half Poisson deviance :
+
+	H(Qm) = 1/Nm   E     (ylog y/ym -y + ym)
+		      yC-Qm 			
+
+Setting criterion="poisson" might be a good choice if your target is a count or a frequency (count per some unit). In any case,  is a necessary condition to use this criterion. Note that it fits much slower than the MSE criterion.
+
+3. Mean Absolute Error:
+	
+	meadian(y)m = median(y)
+			yC-Qm
+
+
+	H(Qm) = 1/Nm E | y - median(y)m|
+		    yC-Qm
+	
+Note that it fits much slower than the MSE criterion.
+
+
+

@@ -1,0 +1,23 @@
+# A sample machine learning Algorithm
+
+- 2-way classification problem : -ve and +ve classes
+
+- Representation :
+	Lines (Ax + By = C)
+    - Specifically 
+	- if Ax + By + C > 0 then classify "+ve"
+	- Else classify "-ve"
+
+- Evaluation : Number of misclassified examples.
+- Optimization : An algorithm that searches for the three parameters : 
+	A, B and C.
+
+
+# How does machine learners solve this problem ?                                                                                                                                         
+- Try different lines until you find that separates the data into two.                                                                                                                   
+- A more plausible alternative                                                                                                                                                           
+        - Begin with a random line                                                                                                                                                       
+        - Repeat until no errors                                                                                                                                                         
+        - For each point :                                                                                                                                                               
+                - If the current line says +ve and point is -ve then decrease A, B and C.                                                                                                
+                - If the current line says -ve and point is +ve then increase A, B and C. 

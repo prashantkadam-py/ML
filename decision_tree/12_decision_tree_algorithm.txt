@@ -1,0 +1,13 @@
+# Decision Tree Learning Algorithm
+
+GROWTREE(S)
+
+if (y = 0 for all <x, y> C- S) return new leaf(0)
+
+else if (y = 1 for all <x, y> C- S) return new leaf(1)
+
+else
+	choose best attribute xj
+	S0 = all <x, y> C- S with xj = 0;
+	S1 = all <x, y> C- S with xj = 1;
+	return new node(xj, GROWTREE(S0), GROWTREE(S1))

@@ -1,0 +1,48 @@
+# The follwing questions may arise in your mind !
+
+1. How to choose the best attribute ?
+	- Which property to test at a node.
+
+2. When to declare a particular node as leaf ?
+
+3. What types of trees should we prefer, smaller, larger, balanced etc ?
+
+4. If a leaf node is impure (has both positive and negative classes), what should we do ?
+
+5. What if some attribute value is missing.
+
+
+
+# Choosing the best Attribute ?
+
+- Fundamental principle underlying tree creation 
+	- Simplicity (prefer small trees)
+	- Occam's Razor : 	
+		Simplest model that explains the data should be preferred.
+
+- Each node divides the data into subsets.
+
+- Most popular metric for splitting the data is Information Gain Heuristic.
+
+# Information Gain Heuristic :
+	
+	- Gain(S, A) = H(S) - E P(v) H(Sv)
+			      v C- Values(A)
+
+	S - subset of data passing to that branch.
+	A - Attribute you want to choose.
+	H(S) - Current entropy
+	H(Sv) - New entropy 
+	P(v) - Probability of value 0, 1, .....
+
+- Entropy, denoted by H is a measure of impurity.
+- Gain = Current impurity - New impurity
+	- Reduction in impurity.
+	- Maximize gain.
+
+- Second term (P(v) H(Sv)) gives expected entropy.
+(weigh each bin by the amount of data in it.)
+		
+
+
+

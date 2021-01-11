@@ -1,0 +1,15 @@
+# Information Gain Calculation 
+
+
+GAIN (S, A) = ENTROPY(S) - E {|Sv| / |S|} ENTROPY(Sv)
+			
+			V C- values(A)
+
+
+GAIN (S, A = HUMIDITY) = 0.940 - (7/14) * ENTROPY(HUMIDITY=HIGH) - (7/14) * ENTROPY(HUMIDITY=NORMAL)
+
+
+ENTROPY(HUMIDITY=HIGH) = -(3/7) log2(3/7) - (4/7) log2(4/7)
+
+
+ENTROPY(HUMIDITY=NORMAL) = -(6/7) log2(6/7) - (1/7) log2(1/7)

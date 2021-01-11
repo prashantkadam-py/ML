@@ -1,0 +1,179 @@
+# Practical Issues in Decision Tree Learning
+
+- Overfitting
+- When to stop growing a tree ? 
+- Handling non-Boolean attributes
+- Handling missing attribute values
+
+
+# Overfitting 
+
+- Goal of ML is to achieve max accuracy on test data.
+- Shorter and more balanced tree could give better results.
+- Larger tree tends to overfitting.
+- Adding a noisy training example (end result may be recorded wrongly) could result in deeper (more complex) trees. Which could result in overfitting.
+
+- Consider error of hypothesis h over
+    - training data : error-train(h) 
+    - entire distribution D of data : error-D(h)
+
+- Hypothesis h C- H overfits training data if there is an alternative hypothesis h` C- H such that
+		error-train(h) < error-train(h`)
+	and 
+		error-D(h) > error-D(h`)
+
+# Sources of Overfitting
+- Noise
+- Small number of examples associated with each leaf
+    - What if only one example is associated with a leaf. Can you believe it ? 
+- Generalization is the most important criteria 
+    - Your method should work well on examples which you have not seen before.
+
+# Avoid Overfitting
+
+- Two approaches : 
+	- Stop growing the tree when data split is not statistically significant.
+	- Grow tree fully, then post-prune.
+
+- Key issue :
+	- Apply statistical test to estimate whether exapnding a particular node is likely to produce an improvement beyond the training set.
+		E.g. Chi-Squared test.
+	- Add a complexity penalty.
+	- Divide data into training and validation set.	
+
+# Chi-Square Pruning (1st approach to stop growing the tree)
+
+- Build entire tree.
+- Consider each leaf decision and perform the chi-squared test (label vs split variable) 
+	
+ 	No of instances entering this decision : s
+	No of + instances entering this decision : p
+	No of - instances entering this decision : n
+		
+			X
+
+
+
+	F                                 T 
+
+No of instances here : sf               No of instances here : st
+No of + instances here : pf             No of + instances here : pt
+No of - instances here : nf		No of - instances here : nt
+
+Hypothesis : X is uncorrelated with the decision. (Splitting attribute X is not creating value in decision making.)
+
+We can identify nodes which are uncorrelated with the decision to prune the tree.
+
+Then pf should be close to ( sf * p/s) or (pf/sf) ~= (p/s)
+and pt should be close to (st * p/s) or (pt/st)  ~= (p/s)
+
+Similarly for nf and nt.
+
+
+# Training and Validation split (2nd approach to stop growing the tree)
+
+- Validation data is used for tunning and making our model better. It is not used for training but available at training time to improve training data.
+- Training data = 
+		2/3 training data is used for training (learning / to capture the splits / to construct model)
+		+
+		1/3 validation data is used to validate the trained model (check accuracy on validation dataset) 
+
+- Suppose model gives 95% accuracy on 2/3 training dataset and 90% accuracy on validation set means model is overfitting the data. 
+- Prune the decision tree by using training data and create a new model and again test it on validation set till you get validation accuracy close to training accuracy.
+- Then use that model on test dataset (unseen dataset).
+
+- NOTE : 
+	- You need to have sizable dataset to divide dataset into training, validation and test dataset.
+	- Training and validation set are unlikely to exhibit the same random fluctuations caused by co-incidental regularities and random errors.
+	
+
+# Pruning Approach 1
+- Reduced-Error Pruning	
+	- Split data into training and validation set.
+	- Do until further pruning is harmful.
+		- Evaluate impact on validation set of pruning each possible node (plus those below it)
+		- Greedily remove the one that most improves validation set accuracy.
+			 
+
+# Rule Post Pruning
+
+- Induce the decision tree using the full training set (allowing it to overfit)
+- Convert the decision tree to set of rules.
+- Prune each rule by removing pre-conditions that improve estimated accuracy.
+	- Estimate accuracy using validation set.
+- Sort the rules using their estimated accuracy.
+- Classify new instances using the sorted sequence.
+
+- IF (Outlook == Sunny) ^ (Humidity == High) THEN PlayTennis = NO
+- Each rule pruned by removing antecedent / precondition.
+- Preconditions : (Outlook == Sunny), (Humidity == High)
+- Select whichever pruning results in improved accuracy.
+
+- Advantages :
+	- Allows distinguishing between different contexts
+		- Each path, is a distinct rule.
+		- Pruning decisions regarding attributes can be performed differently for each path. (different than pruning node in tree data structure)
+	- Removes distinction between attribute tests near the root and those near the leaves.
+		- Reduces bookkeeping issues regarding re-organizing tree.
+
+
+# How to handle Non-Boolean attributes in the tree ?
+- Continuous Attributes
+	- Split using a threshold (Boolean split)
+	- What threshold to use ?
+		- Sort the examples according to the attribute and consider all mid-way points at which the classification changes as a threshold.
+	
+	Example : 
+	Temp                40      48      60      72     80     90
+	Play Tennis?        NO      NO      YES     YES    YES    NO
+
+	Two features: Threshold=54; Threshol=85
+	- Other option split into multiple intervals.
+
+# Handling Missing Values 
+- Some attribute-values are missing
+	- Example : patient data. You don't expect blood test results for everyone.
+- Treat the missing value as another value.
+- Ignore instances having missing values.
+	- Problematic because throwing away data
+- Assign it the most common value.
+- Assign it the most common value based on the class that the example belongs to.
+
+# Handling Missing Values : Probabilistic Approach
+- Assign a probability to each possible value of attribute A.
+- Let us assume that A(x=1) = 0.4 and A(x=0) = 0.6 
+	- A fractional 0.4 of instance goes to branch A(x=1) and 0.6 to branch A(x=0).
+	- Use fractional instances to compute gain.
+	Assign (4 + 4/10) x=1 and (6 + 6/10) x=0 probability to split.
+
+# Summary : Decision Trees
+
+- Representation : 
+	- nodes (attributes), 
+	- leaf nodes (decisions / hypothesis), 
+        - branches (attribute values), 
+        - Hypothesis space, feature space
+
+- Tree growth : 
+	- recurssive algorithm, 
+        - how data (subsets) is passed to the algo
+
+- Choosing the best attribute :
+	- Information gain,
+	- Entropy
+	- calculate at each node
+
+- Overfitting and pruning : 
+	- Sources of overfitting.
+	- Consequences of overfitting
+	- Approaches to Avoid overfitting.
+	- Training, Validation and Test set.
+	- Pruning Approach1 : Chi-Squared pruning
+	- Pruning Approach2 : Rule Post Pruning
+
+- Special cases :
+	- Missing Attributes.
+	- Continuous Attributes. 
+
+- Many forms in practice : CART, ID3, C4.5
+	- We discussed ID3.

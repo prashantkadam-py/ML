@@ -1,0 +1,7 @@
+# how to perform post pruning activities : 
+	- chi square test to eliminate nodes
+        - eliminate node based on validation and test set accuracy
+	- convert tree to rules and modify conditions partially 
+
+# Multi-output Decision Tree
+# Minimal Cost-Complexity Pruning

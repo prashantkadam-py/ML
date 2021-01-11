@@ -1,0 +1,26 @@
+# Decision Trees Hypothesis Spaces
+
+- Internal nodes : test the value of particular features xj and branch according to the results of the test.
+
+- Leaf nodes : specify the class h(x).
+
+- Features are outlook (x1), temperature (x2), humidity (x3), wind (x4). Feature vector X = (sunny, hot, high, strong) will be classified as No. The temperature feature is irrelevant.
+
+- Note :
+	- Discrete feature can appear only once (or not appear at all) along the unique path from the root to a leaf.
+	- Continuous feature can appear multiple times along the unique path from the root to a leaf.
+	- Example : 
+		75% <= Humidity > 75%  feature 1
+		95% <= Humidity > 95%  feature 2 
+		These two are different discrete features.
+
+
+- Decision trees divide the feature space into axis-parallel rectangles, and label each reactangle with one of the K classes.
+
+- As the number of nodes (or depth) of tree increases, the hypothesis space grows.
+
+	- depth 1 ("decision stump") : 
+		can represent any boolean function of one feature.
+
+	- depth 2 :  
+		any boolean function of two features; some boolean functions involving three features. eg. (x1 ^ x2) V (~x1 ^ ~x3)

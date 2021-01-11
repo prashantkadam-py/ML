@@ -1,0 +1,38 @@
+# (Video 07)
+
+# Steps in Supervised Learning                                                                                                                                                           
+                                                                                                                                                                                         
+1. Determine the representation (Alorithm) for "x, f(x)" and determine what "x" to use __(Feature Engineering)__.                                                                        
+2. Gather a training set (not all data is kosher) (Data Cleaning).                                                                                                                       
+3. Select a suitable evaluation method.                                                                                                                                                  
+4. Find a suitable learning algorithm among a plethora of available choices. 
+
+# Hypothesis Space: (Video - 07)                                                                                                                                                         
+- Learning is the removal of uncertainity.                                                                                                                                               
+- Learning requires guessing good, small hypothesis case.                                                                                                                                
+- We could be wrong!                                                                                                                                                                     
+                                                                                                                                                                                         
+    - Our prior knowledge might be wrong!                                                                                                                                                
+    - Our guess for hypothesis class could be wrong!                                                                                                                                     
+        - The smaller the hypothesis class, more likely we are wrong!                                                                                                                    
+                                                                                                                                                                                         
+- Example 1: {x1, x3, x4} if two of them is true => y is also consistent with the training data.                                                                                         
+- Example 2: x4 ^ Oneof{x1, x3} => y is also consistent with the training data.                                                                                                          
+- Example 3: x4 ^ ~x2 => y is also consistent with the training data.                                                                                                                    
+- If either of these is the unknown function, then we will make errors when we are given new x.                                                                                          
+                                                                                                                                                                                         
+- For Less data Example 1, 2 and 3 all are valid hypothesis.                                                                                                                             
+- For more data these above valid hypothesis can be checked against counter examples to get more appropriate valid hypothesis. 
+
+
+# Feature Engineering is the Key:
+- Most effort in ML projects is constructing features.
+- Black art : Intuition, creativity required 
+	- Understand properties of the task at hand
+	- How the features interact with or limit the algorithm you are using.
+
+- ML is an iterative process.
+	- Try different types of features, experiment with each and then decide which feature set / algorithm combination to use.
+
+- If two features correlate each other then discard one.
+- If features are not correlated with output then discard them.

@@ -1,0 +1,21 @@
+1. Entropy : 
+
+	H(Qm) = - E Pmk log2(Pmk)
+		  k	
+
+2. Gini :
+	
+	H(Qm) = E Pmk (1 - Pmk) sklearn
+		k 
+
+		
+	Gini = 1 - E (Pmk)**2
+		   k	
+
+
+3. Misclassification :
+
+	H(Qm) = 1 - max(Pmk)
+
+
+

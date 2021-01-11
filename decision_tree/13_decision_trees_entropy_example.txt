@@ -1,0 +1,27 @@
+# Example : 
+
+
+1. Tossing a coin 5 heads, 0 tails.
+
+
+ENTROPY (S) = -(5/5) [log2(5/5)] - (0/5) [log2(0/5)] = 0.0
+
+5/5 : 5 (heads) / 5(total no of outcomes) 
+0/5 : 0 (tails) / 5(total no of outcomes)
+
+Maximum amount of uncertainity.
+
+2. Tossing a coin 2 heads, 2 tails.
+
+ENTROPY (S) = -(2/4) [log2(2/4)] - (2/4) [log2(2/4)] = 1.0
+
+Maximum amount of impurity.
+
+
+Conclusion : 
+
+If the value of ENTROPY is higher then we can say that our sample is more impure.
+If the value of ENTROPY is lower then we can say that our sample is more pure.	
+
+
+

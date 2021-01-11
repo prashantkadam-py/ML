@@ -1,0 +1,16 @@
+# Occam's Razor :
+	- All other things being equal, the simplest solution is the best.
+
+	- __Rule of thumb__ :
+		Prefer the simplest hypothesis that fits the data.
+
+	- A simpler hypothesis is less likely to be correct "by chance" and is therefor more likely to generalize well.
+
+	- If we have 2 hypothesis with equally small training error, how can we pick the right one?
+		- If we pick the wrong one, with enough data, we will eventually find out.
+	
+	- The amount of data we need (to be sure we pick the right hypothesis) depends on the complexity of the hypothesis class.
+	- If we want to avoid the possibility of overfitting, we should restrict the complexity of the hypothesis class, or use a larger training set.
+	- An overly simple hypothesis class may underfit.
+
+
