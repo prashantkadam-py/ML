@@ -1,5 +1,8 @@
 # Decision Tree Learning Algorithm
 
+Channel - machine learning and my music                                                                                                                                                  
+Url - https://www.youtube.com/watch?v=V1SL0rb9aj8&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=12
+
 GROWTREE(S)
 
 if (y = 0 for all <x, y> C- S) return new leaf(0)

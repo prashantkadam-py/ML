@@ -1,5 +1,8 @@
 # A sample machine learning Algorithm
 
+Channel - machine learning and my music 
+Url - https://www.youtube.com/watch?v=KgAG0aEmeA8&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=8
+
 - 2-way classification problem : -ve and +ve classes
 
 - Representation :

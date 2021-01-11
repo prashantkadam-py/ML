@@ -1,5 +1,6 @@
 # Information Gain Calculation 
-
+hannel - machine learning and my music                                                                                                                                                  
+Url - https://www.youtube.com/watch?v=73yPSuNRrAY&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=16
 
 GAIN (S, A) = ENTROPY(S) - E {|Sv| / |S|} ENTROPY(Sv)
 			

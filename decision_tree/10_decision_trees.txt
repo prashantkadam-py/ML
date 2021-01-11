@@ -1,5 +1,8 @@
 # Decision Trees Hypothesis Spaces
 
+Channel - machine learning and my music
+Url - https://www.youtube.com/watch?v=SNTtLrn8i_o&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=10
+
 - Internal nodes : test the value of particular features xj and branch according to the results of the test.
 
 - Leaf nodes : specify the class h(x).

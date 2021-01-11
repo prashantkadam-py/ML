@@ -1,5 +1,8 @@
 # Practical Issues in Decision Tree Learning
 
+Channel - machine learning and my music                                                                                                                                                  
+Url - https://www.youtube.com/watch?v=qTs-lLNFxc0&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=18
+
 - Overfitting
 - When to stop growing a tree ? 
 - Handling non-Boolean attributes

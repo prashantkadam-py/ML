@@ -1,4 +1,7 @@
-# (Video 07)
+# (Video 07) 
+
+Channel - machine learning and my music
+Url - https://www.youtube.com/watch?v=uZFBUFxXfzs&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=7
 
 # Steps in Supervised Learning                                                                                                                                                           
                                                                                                                                                                                          

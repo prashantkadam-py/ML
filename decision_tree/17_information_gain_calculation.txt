@@ -1,5 +1,8 @@
 # Information Gain Calculation
 
+Channel - machine learning and my music                                                                                                                                                  
+Url - https://www.youtube.com/watch?v=5PXWjDSD1zs&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=17
+
 GAIN(Ssunny, HUMIDITY) = ENTROPY(Ssunny) - (3/5) ENTROPY(HUMIDITY=HIGH) - (2/5) ENTROPY(HUMIDITY=NORMAL)
 
 ENTROPY(Ssunny) = - (3/5) log2(3/5) - (2/5) log2(2/5)

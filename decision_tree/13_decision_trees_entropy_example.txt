@@ -1,5 +1,7 @@
 # Example : 
 
+Channel - machine learning and my music                                                                                                                                                  
+Url - https://www.youtube.com/watch?v=AoB6X39knNQ&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=13
 
 1. Tossing a coin 5 heads, 0 tails.
 

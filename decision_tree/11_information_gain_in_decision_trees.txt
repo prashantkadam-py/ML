@@ -1,5 +1,8 @@
 # The follwing questions may arise in your mind !
 
+Channel - machine learning and my music                                                                                                                                                  
+Url - https://www.youtube.com/watch?v=JUVblg9UnaM&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=11
+
 1. How to choose the best attribute ?
 	- Which property to test at a node.
 
