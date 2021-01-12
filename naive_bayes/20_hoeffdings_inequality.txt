@@ -1,0 +1,37 @@
+Channel - Hoeffding’s Inequality -- Part I
+Url - https://www.youtube.com/watch?v=6Sb-AYLWVwk&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=20
+
+# Hoeffding's Inequality use : 
+Hoeffding's Inequality gives us the number of data points need to collect to reliably estimate the parameter value.
+
+
+# A bound (from Hoeffding's inequality)
+
+For N = aH + aT, 
+and
+	Q^MLE = aH/(aH + aT)
+
+
+Let Q* be the true parameter, for any epsilon > 0:
+
+	P(|Q^ - Q*| >= epsilon) (probablity of making mistake) <= 2e**[-2N * (epsilon**2)]
+
+	Q^ - point of estimation MLE 
+	Q* - true parameter
+	epsilon - amount of error willing to allow in MLE calculation
+	
+
+Example : 
+	I want to know the coin flip Q within epsilon = 0.1, with the probability of mistake delta <= 0.05
+
+        How many flips ? Or how big do i set N ? 
+		
+		P(mistake) is less than or equal to 2e**[-2N * (epsilon**2)] <= delta
+
+
+		substituting values,
+			ln delta >= ln 2 - 2N(epsilon)**2  (epsilon = 0.1 and delta <= 0.05) = 190
+
+
+	We can reliably estimate Q parameter MLE by tossing coin 190 times bounded to delta <= 0.05 and epsilon = 0.1. 
+

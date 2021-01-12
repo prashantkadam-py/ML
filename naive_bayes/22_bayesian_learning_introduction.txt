@@ -1,0 +1,35 @@
+Channel - Machine Learning & My Music 
+Url - https://www.youtube.com/watch?v=hNfVgx-AUQc&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=22 
+
+# Bayesian learning :
+
+- If we have prior belief then we cannot use MLE. We can learn it Bayesian way...
+- Rather than estimating single Q, we obtain a distribution over possible values of Q.
+
+- prior belief (In the begining : parameter value vs pdf) + data (observe flips {tails, tails}) ----> posterior belief (After observations parameter : value vs pdf) 
+
+- Bayesian Rule :   
+              
+             		P(D|Q) P(Q) 
+	P (Q|D) = --------------------
+	     		P(D)
+
+
+
+	P(Q) -   Prior estimation / Prior belief
+	P(D|Q) - Data likelihood / MLE
+	P(D) -   Normalization
+	P(Q|D) - Posterior
+
+
+	OR equivalently :
+		
+		P(Q|D) ~= P(D|Q) P(Q)
+
+	Also for uniform priors :
+		P(Q) ~= 1
+		P(Q|D) ~= P(D|Q) 
+	 	
+
+
+	

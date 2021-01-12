@@ -1,0 +1,55 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=SrJYEEZnkrg&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=19
+
+
+- Flipped a coin 5 times and we got 3 heads, 2 tails. What's the probability of getting heads. 
+	
+	The probability of getting heads is P(H) = 3/5
+
+- These flips are i.i.d (Independent identical distribution) 
+	- independent events.
+	- identically distributed according to Binomial distribution.
+
+
+- Sequence D of aH Heads and aT Tails
+
+	P(D|Q) = Q**aH (1-Q)**aT  ----> Binomial Distribution	
+
+	D : Data
+	Q : Parameter
+	aH : Number of heads
+	aT : Number of tails
+
+
+- Data : Observed set D of aH heads and aT tails 
+- Hypothesis : Binomial Distribution
+- Learning : finding Q is an optimization problem.
+	- What's the objective function ?
+		P(D|Q) = Q**aH (1-Q)**aT 
+
+- MLE : Choose Q to maximize probability of D.
+
+	Q^ = argmax    P(D|Q) 
+		Q
+
+	   = argmax   ln P(D|Q)
+
+
+- First parameter learning algorithm :
+	
+	Q^ = argmax ln P(D|Q) 
+		Q   
+		
+	   = argmax ln (Q**aH (1-Q)**aT)
+		Q
+
+   argmax = d/dQ
+		
+   d/dQ ln P(D|Q) = d/dQ [ln Q**aH (1-Q)**aT]
+		  = d/dQ [aH ln(Q) + aT ln(1-Q)]
+			
+                  = aH d/dQ ln(Q) + aT d/dQ ln(1-Q)
+		  = (aH/Q) - (aT/1-Q) = 0 (set to 0 maximize)
+
+   Q^MLE = aH/(aH + aT) = 3/5 = P(H)
+		                 

@@ -1,0 +1,59 @@
+Channel - Machine Learning & My Music
+Url - https://www.youtube.com/watch?v=UyDgw0BusHM&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=24
+
+
+# Beta Posterior explained using an example
+
+- Prior  : 
+	Beta(BH, BT)
+
+- Data : 
+	aH number of heads and aT number of tails
+
+- Posterior distribution : 
+	P(Q|D) = Beta(BH + aH, BT + aT)
+
+	P(Q|D) - posterior
+	BH, BT - parameters of Beta distribution (prior distribution)
+	aH, aT - number of heads, number of tails
+
+- Effect of two priors on posterior for the following datasets : 
+	
+	prior1 - Beta(2.1, 1.1) 
+	prior2 - Beta(20, 10)
+	
+	for all the below datasets #of heads and #of tails are half of the #of data points
+	Dataset1 - 4 
+	Dataset2 - 20
+	Dataset3 - 200
+
+- example Dataset1 :
+
+	- prior1 : weaker prior
+
+		- posterior Beta(2+2.1, 2+1.1) wide posterior due to less data points
+
+	- prior2 : stronger prior
+
+		- posterior Beta(2+20, 2+10)   narrow posterior due to more data points (Dominated by the prior) 
+
+- example Dataset2 :
+	- prior1 : 
+		
+		- posterior Beta(10+2.1, 10+1.1) Data contributes more ---> closer to 0.5
+
+	- prior2 :
+		
+		- posterior Beta(10+20, 10+10) > 0.5
+
+
+- example Dataset3 :
+	- prior1 :
+		
+		- posterior Beta(100+2.1, 100 + 1.1)
+		- closer to 0.5
+
+	- prior2 : 
+		
+		- posterior Beta(100+20, 100+10)
+		- More contribution by data D

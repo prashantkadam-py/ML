@@ -1,0 +1,62 @@
+Channel - Machine Learning & My Music
+Url - https://www.youtube.com/watch?v=yN-xTgxxNr4&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=23
+
+
+# Bayesian Learning : 
+
+	
+	P(Q|D) ~= P(D|Q) P(Q)
+
+
+	P(D|Q) - MLE / Data Likelihood (likelihood function is Binomial distribution)
+	P(Q) - prior ?
+
+
+# What about prior ?
+- Represent expert knowledge.
+- Select prior such that posterior form will be simpler.
+
+# Conjugate Priors :
+- For Binomial, conjugate priors are Beta distribution.
+
+
+# Beta Distribution :
+
+		    r(a + b)	
+Beta (m | a, b) = ------------ m**(a-1) * (1-m)**(b-1)
+		    r(a) r(b)	
+
+
+if a = 0.1, b = 0.1 (i.e a,b  < 1)
+
+	Symmetric beta distribution
+
+if a = 1, b = 1 (i.e a, b = 1)
+
+	Symmetric Uniform distribution 
+
+if a = 2, b = 3 (i.e a,b > 1 and a < b)
+
+	left skewed distribution
+
+if a = 8, b = 4 (i.e a,b > 1 and a > b)
+
+	right skewed distribution
+
+
+# Posterior Distribution :
+
+				  Q**BH-1 (1-Q)**BT-1	
+- Likelihood function : P(Q)  = ------------------------ ~ Beta(BH, BT)
+				  B(BH, BT)	
+
+
+- Binomial P(D | Q) = Q**aH (1-Q)**aT
+
+    P(Q|D) ~= P(D|Q)(Binomial) P(Q) (Beta) 
+
+- P(Q | D) ~= Q**aH * (1-Q)**aT * Q**BH-1 * (1-Q)**BT-1
+
+  P(Q | D) ~= Q**aH+BH-1 * (1-Q)**aT+BT-1  = Beta(aH+BH, aT+BT)
+
+- from above equation we can say that beta distribution conjugates well with binomial distribution to give us posterior which follows beta distribution.
