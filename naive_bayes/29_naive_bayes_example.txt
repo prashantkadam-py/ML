@@ -1,0 +1,23 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=pBXmib5ozHk&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=29
+
+
+# Naive Bayes Example 
+
+- Consider the instance : (Sunny, Cool, High, Strong)
+
+   P(y|X)  = P(y) T1  P(xi|y)
+	           i	
+
+- y {yes, no}
+
+Pr(y=yes) = 9/14
+Pr(N) = 5/14
+Pr(Outlook=Sunny|Yes) = 2/9
+Pr(Outlook=Sunny|No) = 3/5
+
+We end up with 
+	9/14 * 2/9 * 3/9 * 3/9 * 3/9 = 0.0053 for YES
+	5/14 * 3/5 * 1/5 * 4/5 * 3/5 = 0.206  for NO.
+	
+	We thus predict NO is the output.

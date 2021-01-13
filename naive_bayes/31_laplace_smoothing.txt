@@ -1,0 +1,37 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=jSaU_iDB1Ds&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=31
+
+# Multinomials : Laplace Smoothing
+
+example : H, H, T - flipped coin thrice.
+
+- Pretend you saw every outcome k extra times
+
+			c(x) + k 
+	P-LAP,k (x) = --------------------
+			N + k|x|
+
+	k|x| = cardinality of x - 2 (as x can take one of the two values H or T)
+
+	- what's the laplace with k = 0 is Naive Bayes without laplace smothing
+	- k is the strength of the prior
+	- can derive this as a MAP estimate for multinomial with Dirichlet priors
+
+
+- P-LAP,0(X) = 2/3, 1/3 = 2+0/3+(0*2), 1+0/3+(0*2)
+
+- P-LAP,1(X) = 3/5, 2/5 = 2+1/3+(1*2), 1+1/3+(1*2) 
+
+- P-LAP,100(X) = 102/203, 101/203 = 2+100/3+(100*2) , 1+100/3+(100*2)
+
+
+# Probabilities : Important Detail
+
+P(spam | x1....xn) = T1 P(spam|xi)
+		     i	
+
+- we are multiplying lots of small numbers
+- Danger of underflow!
+- Solution use logs and add!
+
+	- p1 * p2 = e**log(p1)+log(p2)

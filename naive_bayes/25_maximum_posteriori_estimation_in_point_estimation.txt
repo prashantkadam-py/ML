@@ -1,0 +1,65 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=YdrMVS7dTt4&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=25
+
+
+# Bayesian Posterior Inference 
+
+## Posterior distribution : 
+
+	P(Q|D) ~= Beta(BH+aH, BT+aT)
+	
+	P(Q|D) - Probability of landing heads
+
+
+## Bayesian Inference : 
+
+- No longer single parameter. It is a distribution.
+- For any specific f, the function of interest.
+- Compute the expected value of f,
+		   1	
+	E[f(Q)]	 = | f(Q) P(Q|D)  dQ
+		   0		
+
+- Integral is hard to compute.
+
+
+# MAP (Maximum Posteriori Approximation) 
+
+MLE : likelihood
+MAP : Posterior
+
+P(Q|D) ~= Beta(BH+aH, BT+aT) 
+	  1	
+E[f(Q)] = | f(Q) P(Q|D) dQ
+	  0	
+
+- As more data is observed, Beta is more certain.
+- MAP : use most likely parameter to approximate the expectation.
+
+
+	Q^map = argmax P(Q|D)
+		 Q
+
+	  E[f(Q)] ~~ f(Q)^
+
+
+# MAP for Beta distribution
+
+	      Q**BH+aH-1 * (1-Q)**BT+aT-1	
+- P(Q|D) = ---------------------------------- ~= Beta(BH+aH, BT+aT)
+		B(BH+aH, BT+aT)
+
+- MAP : use most likely parameter.
+
+			    aH + BH - 1
+- Q^ = argmax P(Q|D) = --------------------------
+			  aH + BH + aT + BT - 2
+
+- Beta prior equivalent to extra flips
+
+- As N --> infinity , prior is forgotten and MAP behaves like MLE
+
+- But for small sample size, prior is important.  
+
+
+	Q

@@ -1,0 +1,127 @@
+Channel : Machine Learning & My Music                                                                                                                                                    
+Url : https://www.youtube.com/watch?v=D4tI3VR5xok&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=28
+
+# Bayesian Categorization / Classification
+
+- set of categories {c1, c2, ....cn}. {spam, ham} {0,1,2,3,4,5,6,7,8,9}
+
+- Let E be the description of an instance. (features)
+
+- Determine category of E by determining for each ci.
+
+		     P(ci) P(E|ci)	
+	P(ci|E) = -------------------------
+			P(E)                          
+
+
+	P(E) can be ignored as it is same for all classes ci (normalisation constant)
+
+	P(ci|E) ~ P(ci) P(E|ci)
+
+- Select the class with max probability.
+
+
+
+
+# Features for text classification 
+
+- X is sequence of words in document.
+- X (and hence P(X|Y)) is huge !!!
+	- Article at least 1000 words, X = {x1, ...., x1000}
+	- Xi represents ith word in document, i.e., the domain of Xi is entire vocabulary, e.g. Webster dictionary (or more) 10,000 words, etc.
+- 10,000**1000 = 10**4000
+- Atoms in universe : 10**80   (we may have problem)		 
+
+# Bag of Words Model
+
+- Position in document doesn't matter.
+	- P(Xi = xi|Y=y) = P(Xk = xi|Y=y) 
+	- all positions have the same distribution.
+
+- Ignore the order of words.
+
+- Features :
+	- X = set of all possible words.
+	- Value of the variable = Frequency (number of times it occurs) in the document.
+
+
+# Bayesian Categorization
+
+	P(y1|X) ~ P(yi) P(X|yi)
+
+   - Need to know : 
+	- Priors : P(yi)
+	- Conditionals : P(X|yi)
+
+   - P(yi) is easily estimated from data.
+	- If ni of the examples in D are in yi, then P(yi) = ni / |D|
+
+   - Conditionals:
+	- X = X1 ^ ....^ Xn
+	- Estimate P(X1 ^....Xn | yi)
+
+   - Too many possible instances to estimate.
+	- (exponential in n)
+	- Even with bag of words assumption ! 
+
+
+# Need to simplify somehow
+- Too many probabilities 
+	- P(X1 ^ X2 ^ X3 | yi)             P(X1 ^ X2 ^ X3 | spam)
+					   P(X1 ^ X2 ^ ~X3 | spam) ...........
+
+
+# Conditional Independence
+
+- X is conditionally independent of Y given Z, if the probability distribution for X is independent of the value of Y, given the value of Z.
+- P (Thunder| Rain, Lightning) = P(Thunder | Lightning)
+- Equivalent to:
+	P(X, Y | Z) = P(X|Z) P(Y|Z)
+
+
+# Naive Bayes Assumption : 
+	- Features are independent given class.
+		P(X1, X2|Y) = P(X1|X2, Y) P(X2|Y)
+			    = P(X1|Y) P(X2|Y)
+
+	- More generally:
+		P(X1.....Xn|Y) = T1 P(Xi|Y)
+				  i
+
+	X1, X2 - word1, word2
+	Xn - n features 
+	Y - class variable
+
+- X is composed of n binary features.
+	P(word | Y=spam)
+	P(word | Y=ham)
+	
+
+# The Naive Bayes Classifier
+Given : 
+	- Prior
+	- n conditionally independent features given the class
+	- For each, we have likelihood
+
+Decision rule :
+	y* = hNB(x) = argmax P(y) P(x1.....xn|y)
+			y
+
+		    = argmax P(y) T1 P(xi|y)
+				   i	
+
+# MLE for the parameters of NB : 
+- MLE for discrete NB, simply : 
+- Prior : 
+			
+		           count(Y=y)    (# of spam)
+ {spam, ham}	P(Y=y) =  ------------------ 
+		           E count(Y=y`) (# of spam + # of ham)
+	                   y`
+
+- Likelihood 			
+			     lottery   spam  	
+			count(Xi=x, Y=y)
+P(Xi=x | Y=y)  = ---------------------------------------------------------
+  lottery spam       	E   count(Xi=x`, Y=y) 
+			x`  all possible words across all spam articles

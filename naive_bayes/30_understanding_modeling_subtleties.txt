@@ -1,0 +1,33 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=WYW_WvgfDt8&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=30
+
+
+# 1. Violating the NB Assumption
+
+- Usually faetures are not conditionally independent.
+	
+	P(x1.....xn|Y) != T1 P(xi|Y)
+
+- The naive bayes assumption is often violated, yet it performs surprisingly well in many cases.
+
+- Plausible reason : Only need the probability of the correct class to be the largest!
+	
+	Example : two-way classification; just need to figure out the correct side of 0.5 and not the actual probability 
+			(0.51 is the same as 0.99)
+
+
+# 2. Insufficient training data
+
+- What if you never see a training example x1 = a, Y=b)
+- Example. you did not see the word "country" in spam!
+- Then P(x1=a, Y=b) = 0.
+
+- Thus no matter what values x2, ......xn take:
+	- P(x1='country', x2=a, ....xn=a, Y=b) = 0
+	- why ? 
+
+- y* = hNB(x) = argmax P(y) P(x1, ......., xn|y)
+		 y 
+	      = argmax P(y) T1  P(xi|y)
+		 y	     i
+			   i	

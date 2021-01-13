@@ -1,0 +1,14 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=OTX3qI7i7PI&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=26
+
+
+1. A sample of 3 observations, (x1 = 0.4, x2 = 0.7, x3 = 0.9) is collected from a continuous distribution with density.
+
+	f(x) = Q * x**(Q-1)      for  0 < x < 1 
+	
+   estimate Q using maximum likelihood estimation.
+
+
+SOLUTION : 
+
+	visit url for solution.
