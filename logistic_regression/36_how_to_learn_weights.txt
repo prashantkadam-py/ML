@@ -1,0 +1,58 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=liOgaslGxs8&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=36
+
+
+# How to learn the weights ? 
+
+- Evaluation function : Maximize the conditional log-likelihood
+
+		
+  after	W <-- argmax   T1 P(Yl | Xl; W)
+  learning	W      l
+
+	P(Yl|Xl; W) - MLE logit --> parameterized by W
+
+	W = <W0, W1......Wn> weight vector
+
+- Note that actually we are just computing P(Y|X)
+- W is included in P(Y|X) just to show that probability is computed using W.
+
+- 
+	W <-- argmax E ln P(Yl|Xl, W)
+		W    l	
+
+		Yl - True label
+		Xl - Feature values of training examples
+		l - training examples
+
+- l(W) = E Yl lnP(Yl=1|Xl, W) + (1-Yl) lnP(Yl=0|Xl, W) 
+	 l
+
+- l(W) = E Yl   P(Yl=1|Xl, W)
+	 l    ----------------- + lnP(Yl=0|Xl, W)
+		P(Yl=0|Xl, W)
+
+
+   substituting value from 35th lecture.
+
+		    n	                     n  
+- l(W) = E Yl (W0 + E WiXil) - ln(1+e**(W0 + E WiXil))
+	 l	    i		             i
+
+- bad news : no closed-form solution to maximize l(W).
+- good news : l(W) is concave function of W!
+- No local minima.
+- Concave functions can be easily optimized using Gradient descent.
+
+	Wi <-- Wi + (learning rate) * (partial derivative of l(W) w.r.t Wi)
+
+
+-  dl(W)
+  ------- = E Xil (Yl - P^(Yl=1|Xl, W))
+   dWi	    l
+
+
+- The term inside the parenthesis is the prediction error (difference between the observed value and the predicted probability)
+
+	Wi <-- Wi + n E Xil (Yl - P^(Yl=1|Xl, W))
+		      l	

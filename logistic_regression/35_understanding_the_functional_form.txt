@@ -1,0 +1,68 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=-DszPTDWH2w&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=35
+
+# Logistic Regression
+
+- Our goal is to learn decision boundary which separates data into two parts for binary classification.
+- functional form cannot be with sharp turns as sharps turns are not differentiable.
+
+## Logistic Regression Functional form 
+
+- Logistic function aka sigmoid function (S shape function)
+
+	1
+    --------------
+      1 + e **(-z)
+
+- P(Y|X) has the logistic / sigmoid functional form.
+
+
+		         1
+- P(Y=1|X)  = -----------------------------            follows sigmoid functional form.
+			     n	
+		1 + e**(W0 + E WiXi)
+			     i=1	
+
+
+	W0 - Bias term
+	Xi - feature
+	Wi - Weight of corresponding feature
+	
+	These are parameters learned at the training time.
+
+
+
+- Logistic Function in n dimensional form
+
+	- N Dimensions --> N-1 # of features ---> Nth dimension is P(Y|X)
+	- N dimensional hyperplane curving in an S plane.
+	- Features can be discrete or continuous.
+
+- based on values of parameters W0, Wi form of sigmoid curve changes to fit the data.
+
+- Functional form two classes : 
+	
+			         1
+	P(Y=0 | X) = ---------------------------------  -- sigmoid
+			1 + e**(W0 + E_i=1_to_n WiXi)	
+
+	
+					e**(W0 + E_i=1_to_n WiXi)
+	P(Y=1 | X) = 1 - P(Y=0 | X) = --------------------------------
+					1 + e**(W0 + E_i=1_to_n WiXi)
+
+
+- Classification Rule 
+	Assign the label Y = 1 if
+		P(Y=1|X) / P(Y=0 |X) > 1 (greater the value of P(Y=1|X) then prediction Y=1)
+
+	
+	- Substitute value for above equation denominator will get cancelled.
+	- take a log of remaining term for simplification which results as follows,
+
+		log(W0 + E_i=1_to_n WiXi) > log(1)
+
+		   W0 + E_i=1_to_n WiXi > 0
+
+	 - It is also known as linear classification rule.
+		
