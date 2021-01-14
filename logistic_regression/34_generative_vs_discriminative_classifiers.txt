@@ -1,0 +1,26 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=1RaXsR_Hr04&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=34
+
+
+# Generative vs Discriminative Classifiers
+
+## Generative Classifiers 
+
+	- eg. Naive Bayes
+	- Assume some functional form for P(X|Y) likelihood, P(Y) prior
+	- Estimate parameters of P(X|Y) , P(Y) directly from training data.
+	- Use Bayes rule to calculate P(Y|X=x)
+	- This is a generative model because :
+		- Indirect computation of P(Y|X) through Bayes rule.
+		- As a result, can also generate sample of the data,  
+			P(X) = E  P(y) P(X|Y)
+			       y
+
+
+## Discriminative Classifiers
+	- eg. Logistic Regression.
+	- Assume functional form for P(Y|X)
+	- Estimate parameters of P(Y|X) directly from training data.
+	- This is a discriminative model because : 
+		- Directly learn P(Y|X)
+		- But cannot obtain sample of data, because P(X) is not available.
