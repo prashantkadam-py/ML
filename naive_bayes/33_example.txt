@@ -1,0 +1,36 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=iX6zgZRCQJs&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=33
+
+Visit url for example
+
+
+# Summary 
+
+- Binomial distribution
+- calculate MLE using binomial distribution, log and derivative.
+		    aH
+	Q^MLE =  -------------
+		    aH + aT
+
+- hoeffding's  inequality to find out number of data points to reliably estimate the parameter value.
+	
+	P(|Q^ - Q*| >= epsilon) <= 2e**[-2N * (epsilon**2)]
+
+- Bayesian Rule
+
+- Priors  (Binomial distribution conjugate is Beta distribution) 
+- Priors examples (skewness)
+- Priors contribute to Posteriors formula 
+	P(Q|D) = Beta(aH+BH, aT+BT)
+
+- Prior contribution to Posteriors for different dataset and priors
+- calculate MAP using P(Q|D), f(Q) and integral.
+	Q^MAP 
+- point estimation calculation examples.
+- Naive Bayes introduction for text classification.
+- sequence of words as feature complications.
+- bag of words to reduce features
+- conditional independence given class to reduce feature.
+- subtleties of naive bayes model.
+- laplace smoothing
+- text classification and other example.
