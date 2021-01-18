@@ -1,0 +1,57 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=5uRlwi8LhZ8&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=44
+
+# Delta Rule 
+
+- Consider simple linear unit, where 
+	
+	O = W0 + W1X1 + W2X2 + ....... + WnXn 
+
+	
+- learn Wi that minimizes the squared error, 
+	   _
+	E |W| = 1/2 E (td - Od)**2
+		    dC-D
+
+		td - true value 
+		     n	
+		Od - E WiXi  (for one example d) 
+                     i=1
+
+	
+		D - set of training examples
+
+
+# Gradient Descent Update
+
+  Gradient :	             _  
+    ~delta E|W| = [ dE/dW0, dE/dW1,..........., dE/dWn] (partial derivative w.r.to each weight)
+
+	
+  Training Rule :
+	              _               _
+		delta W = -n ~delta E|W|
+		      
+		delta Wi = -n dE/dWi ------------------(1)
+
+		n - learning rate
+		delta Wi - weight update
+
+
+# Gradient Descent 
+
+
+dE/dWi = d/dWi 1/2 E (td - Od)**2
+		   d
+
+on solving,
+dE/dWi = E (td - Od)(-Xid)  --------------(2)
+	 d
+
+
+substitute 2 in 1,
+
+Training Rule : 
+
+delta Wi = -n E (td - Od)(-Xi,d)
+              d

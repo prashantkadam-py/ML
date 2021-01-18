@@ -1,0 +1,25 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=7VV_fUe6ziw&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=43
+
+# Perceptron Training Rule
+
+	Wi      <--    Wi        +    delta*Wi
+       Update         Initial    +   weight update
+       weight         value
+
+
+
+	delta*Wi = n * (t - O) * Xi
+
+	n - learning rate (small constant eg. 0.1)
+			   _ 
+	t - target value C(X)
+	O - output of perceptron
+	
+
+
+- Converges if the data is linearly separable 
+	- provided the learning rate is sufficiently small
+
+- Convergence is not assured if data is not linearly separable. In fact in many cases it will not converge.
+- Gradient Descent yields a new rule for learning called Delta Rule. 

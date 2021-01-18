@@ -1,0 +1,71 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=tp2Ydg5zaqU&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=42
+
+
+# Who needs probabilities ? 
+
+- Previously : model data with distributions
+- Joint : P(X, Y) - Naive Bayes
+- Conditional : P(Y|X) - Logistic Regression
+- Error driven : Neural Networks
+
+# Perceptron 
+
+Perceptron = Linear Unit (Activation Unit) + Sign Unit
+
+                               n
+Linear Unit :  O(X1, X2....Xn) =  E WiXi    X0 = 1
+			      i=0	
+
+X0 = Bias term. It creates variation of straight line which does not passes through origin also called as intercept.
+                                             n
+Sign Unit : O(X1, ....Xn) = 1            if  E WiXi > 0
+					     i=0	
+			   -1            otherwise 
+
+Simpler vector notation : 
+          _              _  _
+	O(X) = 1      if W. X  > 0
+			 
+	     = -1     otherwise.
+
+
+# Linear Classifiers
+
+- Inputs are feature values (X1, X2, X3, ......Xn)
+- Each feature has weights (W1, W2 ......Wn)
+- Sum is activation  (Activation Unit)
+	n
+	E    WiXi
+	i=0
+	
+	W0 : bias X0 = 1
+- If the activation is (Sign Unit)
+	- positive, output class +ve
+	- negative, output class -ve
+
+
+# Spam mail example
+
+Imagine 3 features (Spam is positive class)
+	- Free (number of occurances of free)
+	- Money (occurances of Money)
+	- Bias (intecept, always has value 1)
+
+	n
+	E Wi Xi
+	i=0
+
+	(1)(-3) + (1)(4) + (1) (2) = 3
+	_  _
+	W. X  > 0 -> SPAM
+
+# Decision Surface of a Perceptron
+
+- Represents some useful functions 	
+	- what weights represent g(X1, X2) = AND(X1, X2)
+
+- But some functions are not representable
+	- All not linearly separable
+	- Therefore need multi-layer network of perceptrons
+

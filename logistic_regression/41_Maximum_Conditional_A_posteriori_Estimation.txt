@@ -38,13 +38,12 @@ Gaussian Prior - e**term
 
 
 	dl(W)/dWi = E  Xil (Yl - P^(Yl=1|Xl, W)) - lambda*(Wi)
-
+		    l	
 - Weight Update Rule 
 	
 	Wi <-- Wi + n E Xil(Yl - P^(Yl=1|Xl, W)) - n*lambda*(Wi)
-
+                      l
 	Quadratic Penalty  : drives weights towards zero
 	Adds negative linear term to the gradients.
 	Penalizes high weights 
-		      l
-		    l 
+		      
