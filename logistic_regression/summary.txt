@@ -1,0 +1,11 @@
+# Summary
+
+1. Generative vs Discriminative Classifiers.
+2. logistic regression functional form, equation, classification rule.
+3. how to learn weights
+4. gradient descent
+5. overfitting
+6. linear regression
+7. regularization
+8. l1 vs l2
+9. mcap as regularization
