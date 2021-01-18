@@ -1,0 +1,42 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=qh80Z0W6kLM&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=39
+
+
+# Linear Regression
+
+- Try to fit a line to the data such that the error is minimized.
+- Equation of line : 
+		
+		Y = h(X) = W0 + W1 X
+
+		X - square feet
+		y - house price
+		h(X) - hypothesis
+- Error : 
+		     m	
+	J(W0, W1) =  E (Yi - (W0 + W1Xi))**2 
+		    i=1	
+
+		(W0 + W1Xi) - predicted value
+		Yi - actual value / true value
+		J(W0, W1) - loss function (Mean Squared Error - MSE) (Point-wise) squared error
+		Problem : Minimize error
+		W0, W1 - Parameters
+
+# Overfitting:
+
+- MLE estimate : Some weights are large because of chance (coincidental regularities)
+- Regularization : 
+		- Penalize high weights (Complex hypothesis)
+		- Minimize cost : Loss + complexity
+
+			m        n                            m
+		JR(W) = E   (Yi - E   Wj Xi.j)**2  + Lambda/2 E   |Wj|**q      
+			i=1      j=1                          j=1
+ 
+			   LOSS FUNCTION           + REGULARIZATION TERM 
+
+
+      p=q=1 : L1 Regularization (Lasso)
+      p=q=2 : L2 Regularization (Ridge) 		       
+	

@@ -1,0 +1,12 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=xjXMxTKu8Ug&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=38
+
+# Overfitting 
+
+- In logistic regression we use MCLE (Maximum Conditional Log-likelihood Estimation). It prefers higher weights.
+- Higher likelihood of (properly classified) examples are close to decision boundary.
+- larger influence of corresponding features on decision. 
+- can cause overfitting! (Higher weights can cause overfitting)
+
+- Regularization : penalize high weights to avoid overfitting.
+

@@ -1,0 +1,59 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=QNxNCgtWSaY&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=40
+
+
+# L1 and L2 Regularization
+
+## L2 Regularization
+
+- Reduces complexity by adding a complexity penalty to the loss function.
+- Complexity = Sum of squares of weights
+
+double sumSquaredVals = 0.0 // L2 penalty
+for (int i = 0; i < weights.Length, ++i)
+	
+	sumSquaredVals += (weights[i] * weights[i]);
+
+
+
+## L1 Regularization
+
+- Reduces complexity by adding complexity penalty to the loss function.
+- complexity = absolute value of the weights
+
+double sumAbsVals = 0.0 // L1 penalty
+for (int i = 0; i < weights.Length; ++i)
+	
+	sumAbsVals += Math.Abs(weights[i]);
+
+
+## Loss term and Regularization term
+
+- Q0 and Q1 are the two features plotted on y, x axis
+- Blue circle indicates loss function.
+- Red circle is a regularization function. 
+	Q0**2 + Q1**2 <= a
+	
+	L2 regularization 
+	a - we want to bound regularization to certain number that is a 
+
+- Our objective is minimize the loss term and regularization term to achieve maximum accuracy on test data set.
+- inner dot of loss function indicates where the loss is 0 that doesn't mean it is a great model.
+- we allow some error to generalize the model the outer circle is where the error is maximum.
+- intersection of red circle (regularization function) and blue circle (loss function) is a point where we get optimized solution. 
+		Q0**2 + Q1**2 = a
+
+
+## Regularization L1 vs L2 
+
+- L1 tends to generate sparser solutions than a quadratic regularizer.
+- L1 regularizer is a square shape solution 
+	|Q0| + |Q1| <= a
+- L1 intersect with loss term on axis where feature weight Q1 is 0. It is used for feature selection.
+- L2 can intersect with loss term on the axis where loss is 0. 
+
+## Which Regularization is better ? 
+
+- L1 regularization can sometimes have a beneficial side effect of driving one or more weight values to 0.0, which effectively means the associated feature isn't needed.
+- Downside of using L1 regularization is that the technique can't be easily used with some ML training algorithms, in particular those algorithms that use calculus to compute gradient.
+	modulus operator in L1 are not differentiable in gradient descent algorithm.    

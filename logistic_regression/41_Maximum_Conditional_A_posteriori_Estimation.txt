@@ -1,0 +1,50 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=CgndR6lnYWo&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=41
+
+# That's all MCLE. How about MCAP ? 
+
+MCLE equivalent to MLE
+MCAP equivalent to MAP
+
+Gaussian Prior - e**term
+			1
+	P(W) = T1 ------------------- * e**(-Wi**2/2k**2)
+		i  k * (2*pi)**1/2        
+
+
+- One common approach to define parameters on W
+- Normal distribution, zero mean, identity covariance.
+- pushes parameters towards zero.
+
+- Regularization 
+	- Helps avoid very large weights and overfitting.
+
+- MAP estimate
+
+	ln (e ** (-Wi**2/2k**2)) - lambda/2 * ||W||**2
+
+	W <-- arg max E  ln P(Yl|Xl, W) - lambda/2 * ||W||**2
+		   W  l 	
+
+	Wmap                 conditional  - constant * prior     
+			    log likelihood
+
+
+
+# MCAP as Regularization
+
+	W <-- arg max  E   ln P(Yl|Xl, W) - lambda/2 * ||W||**2
+		   W   l
+
+
+	dl(W)/dWi = E  Xil (Yl - P^(Yl=1|Xl, W)) - lambda*(Wi)
+
+- Weight Update Rule 
+	
+	Wi <-- Wi + n E Xil(Yl - P^(Yl=1|Xl, W)) - n*lambda*(Wi)
+
+	Quadratic Penalty  : drives weights towards zero
+	Adds negative linear term to the gradients.
+	Penalizes high weights 
+		      l
+		    l 

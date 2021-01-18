@@ -1,0 +1,21 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=xjXMxTKu8Ug&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=38
+
+# Gradient Descent
+
+- W = Any point in the weight space.
+- Loop until converge 
+	- simultaneously update each Wj in W as follows:
+		Wj = Wj - alpha d/dW J(W)
+			
+
+- Derivative is the slope of the line that is tangent to the function.
+- alpha is learning rate.
+- alpha (learning rate) 
+	if small : slow convergence
+	if large : fail to converge; even diverge
+
+- step size = learning rate * partial derivative 
+				
+
+
