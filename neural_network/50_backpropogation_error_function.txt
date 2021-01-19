@@ -1,0 +1,35 @@
+# BACKPROPOGATION ERROR FUNCTION 
+  
+  _
+E(W) = 1/2   E       E             (tkd - Okd)**2
+           dC-D      k C- outputs 
+
+          training   Sum over all n/w output units
+          examples   
+
+
+   _
+Ed(W) = 1/2   E         (tk - Ok)**2       stochastic version of gradient descent 
+              kC-outputs                  (summing over all network output units for each training example)
+
+
+Xji = ith input to unit j
+
+Wji = weight associated with ith input to unit j
+
+       n
+netj = E Wji Xji  weighted sum of inputs for unit j 
+       i=0
+
+Oj = the output computed by unit j
+
+tj = target output for unit j
+
+sigma = sigmoid function
+
+outputs = the set of units in the final layer of the network
+
+downstream (j) = the set of units whose immediate inputs include the output of unit j
+
+
+
