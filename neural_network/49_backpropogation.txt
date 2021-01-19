@@ -1,0 +1,14 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=v6zbdFbhcMs&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=49
+
+
+# Sigmoid Unit 
+
+We can derive gradient descent rules to train
+
+gradient descent - learns weight iteratively using delta Wi and update weights in each iteration.
+
+- one sigmoid unit
+- Multilayer networks of sigmoid units - backpropogation
+
+- input layer + hidden layer = output layer
