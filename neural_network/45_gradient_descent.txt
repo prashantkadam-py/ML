@@ -1,0 +1,49 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=AN_oLq3kgd0&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=45 
+
+
+# Gradient Descent
+
+## Batch Mode Gradient Descent : 
+
+Do until convergence :
+                                  _ 
+1. Compute the gradient ~delta ED|W|  (partial differentiation w.r.to each weight Wi for all the examples dC-D)
+   _      _               _
+2. W < -- W - n ~delta ED|W|
+
+- It updates weight after looking at all training examples.
+
+    _
+ED |W| = 1/2 E   (td - Od)**2 
+            dC-D
+
+## Incremental Mode Gradient Descent
+
+Do until convergence :
+
+For each training example d in D
+			                  _  
+	1. compute the gradient ~delta Ed|W|
+           _     _               _
+	2. W <-- W - n ~delta Ed|W|
+
+    _
+ Ed|W| = 1/2 (td-Od)**2
+
+- Incremental Gradient Descent can approximate Batch Gradient Descent arbitarily closely if n made small enough.
+
+
+# Summary 
+
+- Perceptron training rule guaranteed to succeed if 
+	- Training examples are linearly separable
+	- sufficiently small learning rate n
+
+- Linear unit training rule uses gradient descent 
+	- guaranteed to converge with minimum squared error
+	- given sufficiently small n
+	- even when training data contains noise 
+	- even when training data not separable by H
+
+ 
