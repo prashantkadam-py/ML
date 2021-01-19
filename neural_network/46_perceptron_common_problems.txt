@@ -1,0 +1,13 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=VHVUixdn6SY&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=46
+
+# Problems with perceptron
+
+- If the data isn't linearly separable perceptron training rule fails. But still we can use perceptron with gradient descent to converge. It will not give you good model.
+- If data isn't separable, weights might thrash. Weights keep on oscillating and algorithm is not able to pick one model as there are multiple models with same amount of error. Algorithm gets confused to select one of them.
+- Averaging weight vectors over time can help (averaged perceptron)
+- Mediocre generalization : finds barely separating solution. In this case algorithm selects model with small error but it barely separates data (does not work well for generalized data)
+- Overtraining : test / validation accuracy usually rises, then falls
+	overtraining is kind of overfitting.
+ 
+ 
