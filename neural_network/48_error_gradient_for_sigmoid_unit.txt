@@ -1,0 +1,30 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=MJNJpFZJrco&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=48
+
+
+# Error Gradient for a sigmoid unit.
+
+dE/dWi  = d/dWi  1/2  E   (td - Od)**2 
+                     dC-D
+
+
+	E - Error function
+	td - truth value 
+	Od - sigmoid 
+	Od = sigma(netd)
+              n 		 
+	net = E WiXi
+             i=0
+
+On solving, 
+dE/dWi = - E (td - Od) * (dOd/dnetd) * (dnetd/dWi)
+
+
+dOd/dnetd  =  (dsigma(netd)/dnetd ) = Od(1 - Od)
+              _   _
+dnetd/dWi = d(W . Xd)/ dWi = Xi,d
+
+
+So : 
+	dE/dWi = - E    (td - Od) * Od (1 - Od) * Xi,d
+	          dC-D
