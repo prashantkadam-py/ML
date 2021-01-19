@@ -1,0 +1,18 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=9IwbALQ9kdY&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=47
+
+
+# Sigmoid Unit
+
+sigmoid unit = summation unit + sigmoid function
+
+                 1
+sigma(x) = --------------
+	    1 + e**(-x)
+
+on solving,
+                      1               e**(-x)
+d/dx sigma(x) = -------------  * -----------------
+                 1 + e**(-x)        1 + e**(-x) 
+d/dx sigma(x) = sigma(x) * (1 - sigma(x))
+
