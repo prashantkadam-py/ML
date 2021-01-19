@@ -18,6 +18,9 @@ Do until convergence :
 ED |W| = 1/2 E   (td - Od)**2 
             dC-D
 
+- Error summed across all training examples
+- computationally expensive than stochastic version
+
 ## Incremental Mode Gradient Descent
 
 Do until convergence :
@@ -32,7 +35,8 @@ For each training example d in D
  Ed|W| = 1/2 (td-Od)**2
 
 - Incremental Gradient Descent can approximate Batch Gradient Descent arbitarily closely if n made small enough.
-
+- weights updated upon examining each training example
+- Avoid falling to local minima as it uses the error per training example.
 
 # Summary 
 
