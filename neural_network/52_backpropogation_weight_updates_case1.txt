@@ -1,0 +1,57 @@
+Channel : Machine Learning & My Music 
+Url : https://www.youtube.com/watch?v=wfzr5t2TF8c&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=52
+
+dEd/ dWji = dEd/dnetj * dnetj/dWji ....... (using chain rule) ----- (1)
+
+	oj = sigma(netj)
+
+	       n	
+	netj = E Wji Xji
+	       i=1 
+
+	dnetj/dWji = Xji ................(2)
+
+substitue 2 in 1,
+dEd/dWji = dEd/dnetj * Xji ................ (3) 
+
+## CASE 1 :  j is an output unit (input layer unit) 
+dEd/dnetj = dEd/doj (term1) * doj/dnetj (term2) .............(4)  
+
+
+Why this are two separate units ? 
+We know the predicted output of hidden layer unit but we don't know what exactly its value has to be. We only know the output value of output layer unit.
+
+Hint :  Wji  influences network through netj
+	netj influences network through oj
+
+
+consider term1,	
+dEd/doj = d/doj * 1/2 E (tk - ok)**2	
+		      k C- outputs
+
+
+       = 0 except when j = k.
+
+dEd/doj = d/doj 1/2 (tj - oj)**2 (summation is removed) 
+	
+	= -1/2 * 2 * (tj - oj)
+	= -(tj - oj) 	----------------- (5)
+
+
+consider term2,
+doj/dnetj = dsigma(netj)/dnetj
+	  
+          = oj (1 - oj)	 -------------------(6)
+
+
+substituting 5, 6 in 4,
+
+dEd/dnetj = - (tj - oj) oj (1 - oj)
+
+delta(Wji) = -n dEd/dWji
+
+	   = -n [-(tj - oj) oj (1 - oj)] xji
+	   = n [(tj - oj) oj (1 - oj)] xji
+
+
+	 	
