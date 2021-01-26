@@ -33,7 +33,7 @@ Url : https://www.youtube.com/watch?v=SrJYEEZnkrg&list=PLUZjIBGiCHFfRJwflq6NqU3C
 		Q
 
 	   = argmax   ln P(D|Q)
-
+		Q
 
 - First parameter learning algorithm :
 	

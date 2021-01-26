@@ -5,7 +5,7 @@
 3. how to learn weights
 4. gradient descent
 5. overfitting
-6. linear regression
+6. linear regression, functional form, equation, error function
 7. regularization
 8. l1 vs l2
 9. mcap as regularization

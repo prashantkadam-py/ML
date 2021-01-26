@@ -6,7 +6,7 @@ Visit url for example
 
 # Summary 
 
-- Binomial distribution
+- MLE - (Binomial distribution)
 - calculate MLE using binomial distribution, log and derivative.
 		    aH
 	Q^MLE =  -------------

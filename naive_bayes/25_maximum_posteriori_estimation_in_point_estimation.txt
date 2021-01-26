@@ -53,7 +53,7 @@ E[f(Q)] = | f(Q) P(Q|D) dQ
 
 			    aH + BH - 1
 - Q^ = argmax P(Q|D) = --------------------------
-			  aH + BH + aT + BT - 2
+	Q		  aH + BH + aT + BT - 2
 
 - Beta prior equivalent to extra flips
 
@@ -62,4 +62,3 @@ E[f(Q)] = | f(Q) P(Q|D) dQ
 - But for small sample size, prior is important.  
 
 
-	Q

@@ -4,7 +4,7 @@ Url : https://www.youtube.com/watch?v=-DszPTDWH2w&list=PLUZjIBGiCHFfRJwflq6NqU3C
 # Logistic Regression
 
 - Our goal is to learn decision boundary which separates data into two parts for binary classification.
-- functional form cannot be with sharp turns as sharps turns are not differentiable.
+- functional form cannot be with sharp turns as sharp turns are not differentiable.
 
 ## Logistic Regression Functional form 
 
@@ -57,7 +57,7 @@ Url : https://www.youtube.com/watch?v=-DszPTDWH2w&list=PLUZjIBGiCHFfRJwflq6NqU3C
 		P(Y=1|X) / P(Y=0 |X) > 1 (greater the value of P(Y=1|X) then prediction Y=1)
 
 	
-	- Substitute value for above equation denominator will get cancelled.
+	- Substitute value for above equation, denominator will get cancelled.
 	- take a log of remaining term for simplification which results as follows,
 
 		log(W0 + E_i=1_to_n WiXi) > log(1)
