@@ -1,0 +1,67 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=PkqTUB5C-f0&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=56
+
+# Algebraic Expression for width of a Margin
+
+- Given two parallel lines with equations
+	ax + by + c1 = 0
+    and
+	ax + by + c2 = 0
+
+    the distance between them is given by,
+	
+	    |c1 - c2|
+     d = ---------------------
+	  (a**2 + b**2)**1/2  
+
+
+- We assume width of margin from origin (hyperplane) is unit 1. Hence 
+	W**T X + b >= 1
+	W**T X + b <= -1
+
+	origin hyperplane, W**T X + b = 0 
+
+- In svm our lines in 2-D are,
+
+    
+     W1X1 + W2X2 + b - 1 = 0 
+  
+     W1X1 + W2X2 + b + 1 = 0
+
+          |b - 1 - b - 1|            2 
+    d = ------------------------ = -----
+         (W1**2 + W2**2)**1/2	   ||W||
+
+
+# Aim :
+- Learn a large margin classifier 
+- Mathematical formulation : 
+	maximize - 2 /||W|| (OPTIMIZATION)
+
+	such that, 
+	
+	(CONSTRAINTS)
+	for yi = +1, W**T X + b >= 1
+	for yi = -1, W**T X + b <= -1
+
+
+- Formulation:
+	
+	maximize 2/||W||
+	minimize -
+		(2/||W||)**-1
+ 		
+		1/2 ||W||**2	
+
+	such that 
+
+	for yi = +1, W**T Xi + b >= 1     margin1
+	    yi = -1, W**T Xi + b <= -1	  margin2
+	             W**T Xi + b = 0      hyperplane
+
+	generalize margin1 and margin2 equation,
+	yi(W**T X + b) >= 1 
+
+- This is constrained optimization problem.
+- This is Quadratic programming problem with linear constraints.
+- However, we will convert it to Lagrangian dual in order to use the kernel trick!
