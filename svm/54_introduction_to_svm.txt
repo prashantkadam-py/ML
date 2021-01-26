@@ -1,0 +1,33 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=Akf3v7T3cks&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=54
+
+# Linear Classifier
+
+g(x) = W**T X + b
+
+g(x) = 0 - hyperplane
+
+g(x) > 0 - +ve class
+g(x) <= 0 - -ve class 
+
+b - bias term / intercept
+
+There can be infinite number of answers (lines) which separates data. But in svm our goal is to find out the one best possible line with large margin which separates data well. Hence they are also known as Large Margin Classifiers.
+
+# Large Margin Linear Classifier
+
+- The large discriminant function (classifier) with the maximum margin is the best.
+
+- Margin is defined as the width that the boundary could be increased by before hitting a data point.
+
+- Why it is the best?
+	- The larger the margin the better generalization.
+	- Robust to outliers.
+
+## Aim : 
+- Learn a Large Margin Classifier.
+- Given set of data points, define :
+	for yi = +1, W**T X + b >= 1
+	    yi = -1, W**T X + b <= -1
+
+- Give an algebraic expression for the width of the margin. 	
