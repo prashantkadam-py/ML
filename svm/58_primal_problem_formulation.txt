@@ -1,0 +1,68 @@
+Url : https://www.youtube.com/watch?v=b2TumyvL9Bc&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=58
+Channel : Machine Learning & My Music
+
+
+# PRIMAL OPTIMIZATION PROBLEM
+
+min  1
+ w  --- ||W||**2
+     2
+
+subject to yi(W**T * Xi + b) >= 1      i = 1,2....., m training examples
+
+
+- all the training points are either on margin or away from margin.
+
+gi(w) = - yi (W**T Xi + b) + 1 <= 0    -- inequality constraint 
+
+NOTE : One constraint for each training example
+
+- FROM KKT DUAL COMPLEMENTARITY CONDITION, alphai > 0
+- For training examples that have functional margin = 1
+(corresponding to constraints that hold equality gi(w) = 0)
+- Support vectors are on line alphai > 0 and gi(w) = 0
+- all other data points gi(w) < 0 and alphai = 0 
+
+- In svm we have inequality constraint 
+				    m	
+L (w, alpha, beta) = 1/2 ||w||**2 - E    alphai [yi (W**T Xi + b) - 1] ------------ A
+                                    i=1
+
+
+MINIMIZE L(w, beta, alpha) w.r.to w and beta (fixed alpha) to get Qd
+                                m
+~deltaw L(w, beta, alpha) = w - E    alphai * yi * Xi = 0 ------------- 1
+                                i=1
+
+[set derivative of L w.r.to w and beta to zero]
+
+from eqn 1 , 
+    m
+w = E alphai * yi * xi ---------- 2 
+    i=1
+
+
+derivative w.r.to beta,
+             m 
+dL/dbeta  =  E alphai * yi   = 0 ------- 3
+             i=1
+
+
+substitue eqn 2 and 3 in A,
+m                  m
+E    alphai - 1/2  E   yi yi alphai alphai xi xj
+i=1               i,j=1
+
+
+## DUAL OPTIMIZATION PROBLEM   
+                      m               m 
+ max       W(alpha) = E  alphai - 1/2 E    yi yj alphai alphaj {xi**T * xj }
+alpha                 i=1             i,j=1
+
+subject to alphai >= 0   i = 1,2,....m 
+
+{xi, xj} - inner product of feature vector / kernel function / phi(x)
+
+- To solve features in higher dimensional spaces, replace features x by phi(x)	where phi(x) is a feature mapping
+ 
+
