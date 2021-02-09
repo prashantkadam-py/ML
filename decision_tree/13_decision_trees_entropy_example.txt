@@ -22,8 +22,8 @@ Maximum amount of impurity.
 
 Conclusion : 
 
-If the value of ENTROPY is higher then we can say that our sample is more impure.
-If the value of ENTROPY is lower then we can say that our sample is more pure.	
+If the value of ENTROPY is high then we can say that our sample is more impure.
+If the value of ENTROPY is low then we can say that our sample is more pure.	
 
 
 
