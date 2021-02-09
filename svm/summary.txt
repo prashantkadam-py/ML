@@ -1,0 +1,14 @@
+- Linear Classifier drawbacks.
+- define Large Margin Classifier 
+- derive an equation of distance between margins and hyperplane.
+- constraints and optimization in svm.
+- generic equation of constraint and minimize optimization equation.
+- lagrangian equation for constraint optimization solution for equality constraint.
+- generalized lagrangian equation for constraint optimization solution for equality and inequality constraint.
+- primal optimization Qp(w) equation and values if w violates and satisfies constraint.
+- dual optimization Qd(w) equation
+- difference between Qp(w) and Qd(w)
+- d* <= p*
+- KARUSH KUHN TUCKER CONDITION
+- support vectors in KARUSH KUHN TUCKER CONDITION 
+

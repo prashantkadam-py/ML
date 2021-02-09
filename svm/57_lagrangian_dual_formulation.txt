@@ -1,0 +1,108 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=0SoXiqjvdVs&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=57
+
+
+# LAGRANGE DUALITY
+
+## Consider a problem of form :
+
+1. min f(w)
+   w
+
+2. subject to 
+
+	hi(w) = 0     i=0,1,2,.....l
+
+## LAGRANGIAN : 
+                    l
+L(w, beta) = f(w) + E   beta * hi(w)
+                    i=1
+
+
+	beta - Lagrange multipliers
+	0 to l - data instances
+	
+set L's partial derivative to 0.
+
+dL/dwi = 0       dL/dbetai = 0
+
+solve for w and beta.
+
+- Generalize to constrained optimization problem which may have equality as well as inequality constraints.
+
+## PRIMAL OPTIMIZATION PROBLEM : 
+
+min f(w)
+ w 
+
+subject to gi(w) <= 0  i = 1, ......... k  -- inequality constraint
+	   hi(w) = 0   i = 1, ......... l  -- equality constraint
+
+
+
+
+
+## GENERALIZED LAGRANGIAN : 
+                           k                    l
+L(w, alpha, beta) = f(w) + E   alphai * gi(w) + E betai * hi(w)
+			   i=1                  i=1
+
+alpha's and beta's are Lagranges Multipliers.
+
+Qp(w) =       max                         L(w, alpha, beta)
+	alpha, beta : alphai >= 0      
+
+
+                                                 k                l
+Qp(w) =       max                         f(w) + E alphai gi(w) + E  betai hi(w)
+          alpha, beta : alphai >= 0              i=1              i=1
+
+
+If w violates constraints then Qp(w) = infinity
+
+Qp(w)   = f(w)         if w satisfies the primal constraints
+
+	= infinity     if w violates the primal constraints
+
+
+Consider, 
+
+min Qp(w) =  min          max                 L(w, alpha, beta)
+ w	      w   alpha,beta:alphai >=0  
+
+- primal optimization --> p* = Qp(w) --> maximize w.r.to alpha and beta  
+- dual optimization --> d* = Qd(w) --> maximize w.r.to  w
+
+
+        max             Qd(alpha, beta) =           max               min   L(w, alpha, beta)
+alpha,beta:alphai >=0                        alpha,beta:alphai >=0     w
+ 
+                           
+- same as primal problem, order of max and min are exchanged.
+
+## RELATION BETWEEN PRIMAL and DUAL :
+
+ d* <= p*
+
+- max and min of fn always <= min max of fn
+
+- under certain conditions d* = p*
+- so that we can solve dual problem instead of primal problem.
+- suppose f and gi's are convex, and hi's are affine (linear + intercept) and constraints gi are strictly feasible and there is w such that,
+  under above assumptions, there exists w*, alpha*, beta* so that w* is the solution to the primal problem and alpha*, beta* are solutions to the dual problem.
+- Moreover, w*, alpha* and beta* satisfy KARUSH-KUHN-TUCKER (KKT) conditions.
+    d/dwi         L(w*, alpha*, beta*)  = 0  i = 1, ........, m ------- 1
+    d/dbetai      L(w*, alpha*, beta*) = 0   i=1, ........., l -------- 2
+
+		alpha*gi(w*) = 0,   i=1,......,k ------- 3
+		gi(w*) <= 0,        i=1, ......,k ------ 4
+		alpha* >= 0         i=1, ......, k -----5 
+
+	If some w*, alpha*, beta* satisfies the kkt conditions, then it is a solution to primal and dual problems.
+
+
+	gi(w) = 0  --- points are on margin then alpha has to be non zero value to satisfy condition 3
+	gi(w) non zero means alpha has to be zero to satisfy condition 3
+	  
+
+
