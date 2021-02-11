@@ -1,0 +1,69 @@
+channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=jBeysoSiXI4&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=60
+
+
+# SVM REGULARIZATION
+
+## GOAL : 
+1. avoid overfitting.
+2. make algorithm less sensitive to outliers.
+3. extend algorithm to work for non-linearly separable datasets.
+
+## OPTIMIZATION PROBLEM WITH L1 REGULARIZATION
+                               m
+  min        1/2 ||w||**2 + C  E psi       i=1,2,....,m  
+r, w, b                       i=1
+
+
+   psi >= 0 for i=1,....,m
+
+   C - coefficient of total slack / amount of weight given to total slack
+
+- higher value of C means we allow less slack
+- low value of C means more slack
+- Permit training examples to have functional margin less than 1. Functional margin 1-psi. (with psi > 0) 
+
+## NEW LAGRANGIAN SVM equation
+                                            m         m                                        m 
+L (w, b, psi, alpha, r) = 1/2 w * w**T + C  E  psi -  E  alphai[yi (w**T Xi + b) - (1+psi)] -  E  ri psii     --- A
+                                           i=1       i=1                                      i=1         
+
+			   original      total             inequality               new                inequality 
+                           distance      slack             constraint              margin         constraint for slack 
+
+
+- alphai and ri are lagrange multipliers.
+- psi = 0 - no slack
+- psi > 0  - some slack
+
+- set derivative w.r.to w, b and psi to zero.
+
+dL/dw = w - E alphai * yi * xi
+
+w = E alphai * yi * xi  -----------1
+
+         m  
+dL/db =  E  alphai * yi  = 0 ------- 2
+        i=1
+
+dL/dpsi = C - alphak - rk = 0 --------- 3
+
+	rk = C - alphak and rk >= 0
+	alphai >= 0
+ 
+substitute 1, 2, 3 in eqn A, we get the dual,
+
+                       m                     m 
+  max      W(alpha) =  E       alphai - 1/2  E  yi * yj * alphai * alphaj {xi, xj}
+ alpha                i,j=1                 i,j
+
+
+	subject to, 0 <= alphai <= C    i = 1,2,....,m
+        m 
+	E    alphai * yi = 0
+       i=1
+
+- After regularization, equation remains same the only difference is alphai is bound to,
+	 0 <= alphai <= C  
+
+
