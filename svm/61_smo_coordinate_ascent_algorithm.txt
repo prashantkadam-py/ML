@@ -1,0 +1,52 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=qatOnbAEfjs&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=61
+
+# SOLVING THE DUAL PROBLEM 
+
+## COORDINATE ASCENT
+
+consider unconstrained optimization problem
+
+   max      W(alpha1, alpha2, ....., alpham)
+  alpha
+
+  W is a function of parameters alphai's.
+
+## ALGORITHM FOR COORDINATE ASCENT : 	
+Loop until convergence : {
+for i = 1, ...., m {
+   alphai  :=   argmax   W(alphai, alphai-1, .....alpham)
+                alphai
+}               
+}
+
+- HOLD ALL VARIABLES EXCEPT alphai fixed and reoptimize W w.r.to alphai
+
+- can we hold alpah2 to alpham fixed and take a coordinate ascent step and reoptimize the objective w.r.to alpha1 ? 
+	NO , Because, 
+		                        m 
+			alpha1 y(1) = - E    alphai y(i)
+					i=2
+                                       m
+			alpha1 = -y(1) E   alphai y(i)
+				       i=2	
+
+			[since  y(1) c- {-1, 1}, (y(1))**2 = 1]	 
+
+- since alpha1 is exactly determined by the other alphai's, if we hold alpha2 to alpham fixed, we can't change alphai.
+
+## SMO coordinate ascent algorithm 
+
+REPEAT UNTIL CONVERGENCE {
+1. select some pair alphai and alphaj to update next 
+[use hueristic that picks two alpha's that will allow us to make the biggest progress towards gloabal maximum]
+2. Reoptimize W(alpha) w.r.to alphai and alphaj, while holding all the other alphak's (k != i, j) fixed
+}
+
+- update to alphai and alphaj can be computed efficiently.
+	                      m
+alpha1 y(1) + alpha2 y(2) = - E   alphai y(i)     -- fixed can be replaced by some constant
+                              i=3
+
+
+	 

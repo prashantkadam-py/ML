@@ -1,0 +1,79 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=AasatTRGVhI&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=65
+
+# Parametric vs Non-Prametric
+
+## Parametric
+- A particular functional form is assumed e.g., multivariate normal, naive bayes. Training data is used to learn the parameters and these parameters are used to predict the output. 
+- Advantage of simplicity - easy to estimate and interpret
+- may have high bias because the real data may not obey the assumed functional form.
+
+## Non-Parametric
+- distribution or density estimate is data-driven and relatively few assumptions are made a priori about the functional form.
+
+## Other terms : 
+Instance-based, memory based, lazy, case-based, kernel methods...
+
+
+# Nearest Neighbor Algorithm
+## Learning Algorithm
+- Store training examples
+
+## Prediction Algorithm
+- To classify a new example x by finding the training example (xi, yi) that is nearest to x.
+- Guess the class y = yi
+
+# Decision Boundaries
+- The nearest neighbor algorithm does not explicitly compute decision boundaries. However, the decision boundaries form a subset of Voronoi diagram for the training data.
+	
+
+# Instance-Based Learning
+
+- Key idea - just store all training examples <Xi, f(Xi)> 
+
+## 1-Nearest neighbor:
+- Given query instance Xq, locate nearest example Xn, estimate f^(Xq) <-- f(Xn)
+
+## K-Nearest neighbor: 
+- Given Xq, take vote among its k nearest neighbors (if discrete - valued traget functions)
+- Take mean of f values of k nearest neighbors (if real - valued)
+                        k
+                        E   f(Xi)
+			i=1	
+	f^(Xq) <---  ---------------
+                        K
+
+# Distance-Weighted k-NN
+
+- Might want to weight nearer neighbors more heavily
+	              k
+                      E Wi f(Xi)
+		     i=1
+	f^(Xq) <--- ----------------
+		        k	
+			E   Wi
+                        i=1
+
+where,      
+                 1
+	Wi = -----------------
+                d(xq, xi)**2 
+
+
+and d(xq, xi) is distance between xq and xi
+Note, now it makes sense to use all training examples instead of just k. Shepard's method
+
+## When to consider KNN 
+- Instance map to points in R**n
+- Less than 20 attributes per instance
+- Lots of training data 
+
+## Advantages
+- Training is very fast
+- Learn complex target functions
+- Do not lose information
+- robust to noise
+
+## Disadvantages 
+- Slow at query time
+- Easily fooled by irrelevant attributes 

@@ -1,0 +1,58 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=tEx-iqUX9Z4&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=62
+
+
+- When data is non linearly separable we use kernel trick!!!
+
+- Kernel Trick
+
+	SVM = Linear SVM + Kernel Trick
+
+- Kernels : 
+
+	input space (X) -----> high dimensional space phi(X)
+	 linear model   -----> linear model	
+
+
+        circle as a       ------> N dimensional hyperplane 
+       ( non-linear model )             ( linear model )
+
+
+- g(X) = W**T phi(X) + b =    E     alpha phi(X)**T phi(X) + b
+                           i C- sv
+
+- Kernel Function  :
+	
+	K(Xi, Xj) = phi(Xi)**T . phi(Xj)
+
+- Polynomial Kernel 
+	K(Xi, Xj) = (1 + Xi**T Xj)**2 ----> on expansion ----> phi(X)**T phi(X)
+
+
+# Nonlinear SVMs : The Kernel Trick
+
+1. Linear Kernel K (xi, xj) = Xi**T Xj
+
+2. Polynomial Kernel K(xi, xj) = (1 + Xi**T Xj)**p
+
+3. Guassian (Radial - Basis Function (RBF)) Kernel
+
+                          |xi - xj|**2
+     K(xi, xj) =  exp[- ---------------]
+			  2 * sigma**2
+
+4. sigmoid 
+
+	K(xi, xj) = tanh(beta0 Xi**T Xj + beta1)
+
+
+In general functions that satisfy Mercer's condition can be kernel functions: kernel matrix should be positive semidefinite.
+
+
+# SVM Algorithm
+
+1. Choose a kernel function
+2. Choose a value for C
+3. Solve the quadratic programming problem (many software packages available)
+4. Construct the discriminant function from the support vectors.
+

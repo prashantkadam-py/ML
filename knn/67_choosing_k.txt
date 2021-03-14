@@ -1,0 +1,23 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=h3JoGqyN6HQ&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=67
+
+
+# Choosing k 
+
+- small k --> low bias, high variance
+- large k --> high bias, low variance
+
+## Choosing k in practice
+
+- Use cross-validation : 60-20-20 (train-validation-test)
+- predict : for each data point in validation set, predict using KNN from training set. Measure the error rate (classification) or squared error (regression).
+
+- tune : try different values of k, and use the one that gives minimum error rate on validation set.
+
+- evaluate : test on the test set to measure performance. 
+
+# Curse of dimensionality
+
+- It is a phenomena that occur in high dimensions (100s to millions) that do not occur in low dimensional (e.g. 3 dimensional) space.
+- In particular data in high dimensions are much sparser (less dense) than data in low dimensions.
+- For KNN, that means there are less points that are very close in feature space (very similar), to the point we want to predict.

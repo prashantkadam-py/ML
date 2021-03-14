@@ -1,0 +1,20 @@
+Channel : Machine Learning & My Music
+Url : https://www.youtube.com/watch?v=TD_aDcH7Ki8&list=PLUZjIBGiCHFfRJwflq6NqU3CuiPhAhSfi&index=66
+
+# Bias Variance Tradeoff
+
+## Error due to Bias
+- Difference betweem expected prediction of our model and correct value
+- Repeat for different data sets, measure how far off predictions from correct value
+
+## Error due to Variance
+- Variability of model predictions for a given datapoint
+- Measure how much predictions for a given data point varies across the models.
+
+- There is usually bias-variance tradeoff caused by model complexity.
+
+- Complex models (many parameters) usually have low bias, but high variance.
+
+- Simple models (few parameters) usually have high bias, but low variance. 
+
+

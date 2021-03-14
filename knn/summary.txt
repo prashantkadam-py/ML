@@ -1,0 +1,11 @@
+1. parametric vs non-parametric
+2. nearest neighbor algorithm
+3. decision boundaries
+4. Instance based learning (discrete, continuous valued)
+5. Distance-Weighted k-NN
+6. when to use, advantages, disadvantages 
+7. bias, variance definition
+8. simple, complex models and bias-variance tradeoff, dart game example
+9. choose k , small k , large k , bias and variance
+10. choose k in practice
+11. curse of dimensionality

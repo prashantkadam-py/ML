@@ -10,5 +10,21 @@
 - difference between Qp(w) and Qd(w)
 - d* <= p*
 - KARUSH KUHN TUCKER CONDITION
-- support vectors in KARUSH KUHN TUCKER CONDITION 
-
+- support vectors in KARUSH KUHN TUCKER CONDITION
+- form svm constraint optimization equation using lagrangian equation.
+- minimize it w.r.to w and b, substitute it back into lagrangian equation.
+- kernel function / phi(x)
+- goal of regularization in svm
+- optimization problem with L1 regularization
+- lagrangian equation with regularization term
+- set derivative w.r.to w, b and psi to zero.
+- substitute back in main equation.
+- 0 <= alphai <= C
+- max alpha is the 2nd step in solving of svm problem. This is also known as Dual optimization.
+- solving dual problem - coordinate ascent
+- drawback of coordinate ascent algorithm
+- smo coordinate ascent algorithm
+- Kernel Trick , feature space , model 
+- List of Kernels
+- SVM algorithm
+- SVM examples
